@@ -1,7 +1,6 @@
 document.getElementById('downButton').addEventListener('click', async () => {
   try {
-    // Fazendo a requisição para a rota /down
-    const response = await fetch('/down');
+    const response = await fetch('/check-ips');
     const data = await response.json();
 
     console.log(typeof data.message)
@@ -32,7 +31,22 @@ document.getElementById('downButton').addEventListener('click', async () => {
     // document.getElementById('resultDiv').innerText = data.message;
     
   } catch (error) {
-    console.error('Erro ao chamar a rota /down:', error);
+    console.error('Erro ao conectar com o servidor.', error);
+    document.getElementById('resultDiv').innerText = 'Erro ao conectar com o servidor.';
+  }
+});
+
+
+document.getElementById('donwload-pkg').addEventListener('click', async () => {
+  try {
+    const response = await fetch('/donwload-pkg');
+    const data = await response.json();
+
+    console.log(data)
+    document.getElementById('resultDiv').innerText = data.message || ''; 
+    
+  } catch (error) {
+    console.error('Erro ao conectar com o servidor.', error);
     document.getElementById('resultDiv').innerText = 'Erro ao conectar com o servidor.';
   }
 });

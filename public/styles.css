@@ -38,7 +38,7 @@ th {
 
 /* BUTTON */
 
-#downButton {
+.button {
     background-color: #5eb9ea;
     /* Cor de fundo verde */
     color: white;
@@ -57,7 +57,7 @@ th {
     /* Animação de transição suave para a cor de fundo */
 }
 
-#downButton:hover {
+.button:hover {
     background-color: #33abec;
 
     /* Cor do fundo ao passar o mouse */
